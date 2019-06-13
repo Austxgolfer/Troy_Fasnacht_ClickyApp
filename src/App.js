@@ -3,22 +3,17 @@ import GridLayout from "./components/gridLayout";
 
 export default function App() {
   return (
-    <section className="parent">
+    <section className="container">
       <div className="div1">
         <ul>
           <li>
-            <a className="active" href="#home">
-              Home
-            </a>
+            <h2>News</h2>
           </li>
           <li>
-            <a href="#news">News</a>
+            <h2>contact</h2>
           </li>
           <li>
-            <a href="#contact">Contact</a>
-          </li>
-          <li>
-            <a href="#about">About</a>
+            <h2>about</h2>
           </li>
         </ul>
       </div>
