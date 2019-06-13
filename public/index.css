@@ -1,0 +1,83 @@
+.container {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+  grid-column-gap: 0px;
+
+  grid-row-gap: 10px;
+}
+.div1 {
+  grid-area: 1 / 1 / 2 / 21;
+}
+
+.div2 {
+  grid-area: 2 / 3 / 4 / 5;
+}
+
+.div3 {
+  grid-area: 2 / 6 / 4 / 8;
+}
+
+.div4 {
+  grid-area: 2 / 9 / 4 / 11;
+}
+
+.div5 {
+  grid-area: 2 / 12 / 4 / 14;
+}
+
+.div6 {
+  grid-area: 4 / 3 / 6 / 5;
+}
+
+.div7 {
+  grid-area: 4 / 6 / 6 / 8;
+}
+
+.div8 {
+  grid-area: 4 / 9 / 6 / 11;
+}
+
+.div9 {
+  grid-area: 4 / 12 / 6 / 14;
+}
+
+.div10 {
+  grid-area: 6 / 3 / 8 / 5;
+}
+
+.div11 {
+  grid-area: 6 / 6 / 8 / 8;
+}
+
+.div12 {
+  grid-area: 6 / 9 / 8 / 11;
+}
+
+.div13 {
+  grid-area: 6 / 12 / 8 / 14;
+}
+img {
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  width: 100%;
+}
+
+li {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
