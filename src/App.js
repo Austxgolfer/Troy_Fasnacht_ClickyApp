@@ -3,5 +3,5 @@ import GridLayout from "./components/gridLayout";
 import Images from "./images.json";
 
 export default function App() {
-  return <GridLayout />;
+  return <GridLayout image={Images[0].link} />;
 }

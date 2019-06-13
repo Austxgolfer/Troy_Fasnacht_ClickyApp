@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function ImagePlacement() {
-  return <img src={"../images/image11.jpg"} alt="" />;
+export default function ImagePlacement(props) {
+  return <img src={props.link} alt="" />;
 }
