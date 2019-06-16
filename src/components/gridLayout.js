@@ -2,11 +2,26 @@ import React from "react";
 
 class GridLayout extends React.Component {
   state = {
-    count: 0
+    count: 0,
+    clickedImage: []
   };
 
-  handleIncrement = () => {
-    this.setState({ count: this.state.count + 1 });
+  handleIncrement = value => {
+    let clicked = this.state.clickedImage;
+    if (clicked.length >= 1) {
+      if (clicked.includes(value)) {
+        this.setState({ count: 0 });
+        this.setState({ clickedImage: [] });
+      } else {
+        clicked.push(value);
+        this.setState({ count: this.state.count + 1 });
+        console.log("click>1", value);
+      }
+    } else {
+      this.setState({ count: this.state.count + 1 });
+      clicked.push(value);
+      console.log("click=0", value);
+    }
   };
 
   render() {
@@ -27,14 +42,12 @@ class GridLayout extends React.Component {
           </ul>
         </div>
         {pictures.map(pic => (
-          <span className="imageDiv">
-            <img
-              className="image"
-              key={pic.id}
-              src={pic.link}
-              onClick={this.handleIncrement}
-              alt=""
-            />
+          <span
+            className="imageDiv"
+            key={pic.id}
+            onClick={() => this.handleIncrement(pic.id)}
+          >
+            <img className="image" src={pic.link} alt="" />
           </span>
         ))}
         ;
