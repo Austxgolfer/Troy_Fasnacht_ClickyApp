@@ -13,6 +13,9 @@ class GridLayout extends React.Component {
       if (clicked.includes(value)) {
         this.setState({ count: 0 });
         this.setState({ clickedImage: [] });
+        if (this.state.count >= this.state.highScore) {
+          this.setState({ highScore: this.state.count });
+        }
       } else {
         clicked.push(value);
         this.setState({ count: this.state.count + 1 });
@@ -21,10 +24,6 @@ class GridLayout extends React.Component {
       this.setState({ count: this.state.count + 1 });
       console.log(this.state.count);
       clicked.push(value);
-      this.setState({ highScore: this.state.highScore + 1 });
-    }
-    if (this.state.count >= this.state.highScore) {
-      this.setState({ highScore: this.state.count });
     }
   };
 
