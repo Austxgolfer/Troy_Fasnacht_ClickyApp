@@ -1,58 +1,27 @@
 import React from "react";
-import ImagePlacement from "./imagePlacement";
 
 export default function GridLayout(props) {
   return (
     <section className="container">
       <div className="div1">
         <ul>
-          <li>
-            <h2>News</h2>
+          <li className="inst">
+            <h2>
+              Click on and image. The board with shuffle than click another
+              image. See how long you can go with out clicky the same image
+            </h2>
           </li>
-          <li>
-            <h2>contact</h2>
-          </li>
-          <li>
-            <h2>about</h2>
+          <li className="score">
+            <h2>Current Successful Clicks/High Score</h2>
           </li>
         </ul>
       </div>
-      <div className="div2">
-        <ImagePlacement link={props.image} />
-      </div>
-      <div className="div3">
-        <ImagePlacement link={props.image} />
-      </div>
-      <div className="div4">
-        <ImagePlacement link={props.image} />
-      </div>
-      <div className="div5">
-        <ImagePlacement link={props.image} />
-      </div>
-      <div className="div6">
-        <ImagePlacement link={props.image} />
-      </div>
-      <div className="div7">
-        <ImagePlacement link={props.image} />
-      </div>
-      <div className="div8">
-        <ImagePlacement link={props.image} />
-      </div>
-      <div className="div9">
-        <ImagePlacement link={props.image} />
-      </div>
-      <div className="div10">
-        <ImagePlacement link={props.image} />
-      </div>
-      <div className="div11">
-        <ImagePlacement link={props.image} />
-      </div>
-      <div className="div12">
-        <ImagePlacement link={props.image} />
-      </div>
-      <div className="div13">
-        <ImagePlacement link={props.image} />
-      </div>
+      {props.images.map(item => (
+        <span className="imageDiv">
+          <img className="image" key={item.id} src={item.link} />
+        </span>
+      ))}
+      ;
     </section>
   );
 }
