@@ -52,6 +52,7 @@ const Images = [
     link: "../images/image11.jpg"
   }
 ];
+
 export default function App() {
   return <GridLayout images={Images} />;
 }

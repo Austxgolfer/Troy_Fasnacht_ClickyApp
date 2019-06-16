@@ -1,3 +1,13 @@
+.div2 {
+  float: left;
+  width: 66%;
+  justify-content: center;
+}
+.div3 {
+  float: right;
+  width: 33%;
+  justify-content: center;
+}
 .image {
   float: left;
   margin: 15px;
@@ -20,4 +30,10 @@ li {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  justify-content: center;
+}
+.inst {
+  width: 66%;
+}
+.score {
 }
