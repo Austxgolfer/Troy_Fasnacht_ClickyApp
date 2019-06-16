@@ -3,6 +3,7 @@ import React from "react";
 class GridLayout extends React.Component {
   state = {
     count: 0,
+    highScore: 0,
     clickedImage: []
   };
 
@@ -15,17 +16,25 @@ class GridLayout extends React.Component {
       } else {
         clicked.push(value);
         this.setState({ count: this.state.count + 1 });
-        console.log("click>1", value);
       }
     } else {
       this.setState({ count: this.state.count + 1 });
+      console.log(this.state.count);
       clicked.push(value);
-      console.log("click=0", value);
+      this.setState({ highScore: this.state.highScore + 1 });
+    }
+    if (this.state.count >= this.state.highScore) {
+      this.setState({ highScore: this.state.count });
     }
   };
 
   render() {
     const pictures = this.props.images;
+    for (let i = pictures.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [pictures[i], pictures[j]] = [pictures[j], pictures[i]];
+    }
+
     return (
       <section className="container">
         <div className="div1">
@@ -33,11 +42,14 @@ class GridLayout extends React.Component {
             <li className="inst">
               <h2>
                 Click on and image. The board with shuffle than click another
-                image. See how long you can go with out clicky the same image
+                image. See how long you can go with out clicking the same image
               </h2>
             </li>
             <li className="score">
-              <h2>Current Successful Clicks: {this.state.count} /High Score</h2>
+              <h2>
+                Current Successful Clicks: {this.state.count} /High Score:
+                {this.state.highScore}
+              </h2>
             </li>
           </ul>
         </div>
